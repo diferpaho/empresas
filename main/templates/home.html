@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de empresas</h1>
+
+<div class="row">
+  <div class="col-4 offset-8"><a href="{% url 'add' %}" class="btn btn-success">Añadir empresa</a></div>
+</div>
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th scope="col">NIT</th>
+      <th scope="col">Nombre de la empresa</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Telefonó</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for empresa in empresas %}
+    <tr>
+      <th scope="row">{{ empresa.nit }}</th>
+      <td>{{ empresa.name }}</td>
+      <td>{{ empresa.address }}</td>
+      <td>{{ empresa.telephone }}</td>
+      <td>
+        <a href="{% url 'edit' empresa.nit %}" class="btn btn-primary m-1">
+          Editar
+        </a>
+        <a href="{% url 'delete' empresa.nit %}" class="btn btn-danger m-1">
+          Eliminar
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

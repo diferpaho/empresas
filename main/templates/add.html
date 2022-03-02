@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Añadir empresa</h1>
+<form class="mt-5" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="InputNit" class="form-label">NIT:</label>
+        {{form.nit}}
+    </div>
+    <div class="mb-3">
+        <label for="InputName" class="form-label">Nombre:</label>
+        {{form.name}}
+    </div>
+    <div class="mb-3">
+        <label for="InputAddress" class="form-label">Dirección:</label>
+        {{form.address}}
+    </div>
+    <div class="mb-3">
+        <label for="InputTelephone" class="form-label">Teléfono:</label>
+        {{form.telephone}}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}
