@@ -25,7 +25,7 @@ SECRET_KEY = 'uj0#*z#&#sc0ipc1so)^+yu9^82h(5(@ydq%e^+eay(6o4*p)('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['diferpaho.pythonanywhere.com']
 
 
 # Application definition
